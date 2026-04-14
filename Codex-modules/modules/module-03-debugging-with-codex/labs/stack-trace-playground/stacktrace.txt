@@ -1,0 +1,54 @@
+Stack Trace Playground: Participant Practice Set
+
+Use these traces for the lab exercise. For each trace, identify:
+
+1. The error type
+2. The failing file and line
+3. The likely root cause
+4. The smallest safe fix
+
+Trace 1: React render TypeError
+
+TypeError: Cannot read properties of undefined (reading 'items')
+    at Dashboard.render (src/components/Dashboard.jsx:42:18)
+    at Dashboard (src/components/Dashboard.jsx:40:11)
+    at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+    at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:20074:13)
+    at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21587:16)
+
+Trace 2: Hook dependency warning
+
+Warning: Mutable values like 'countRef.current' should not be used to compute derived data
+    at useCounter (src/hooks/useCounter.ts:24:12)
+    at Dashboard.useEffect (src/components/Dashboard.jsx:60:5)
+    at commitHookEffectListMount (node_modules/react-dom/cjs/react-dom.development.js:23150:26)
+    at commitPassiveMountOnFiber (node_modules/react-dom/cjs/react-dom.development.js:24926:11)
+
+Trace 3: Backend route crash
+
+TypeError: Cannot destructure property 'email' of 'req.body' as it is undefined.
+    at loginUser (src/routes/auth.js:18:11)
+    at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+    at next (node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (node_modules/express/lib/router/route.js:114:3)
+    at ServerResponse.json (node_modules/express/lib/response.js:271:10)
+
+Trace 4: Missing module during startup
+
+Error: Cannot find module './controllers/userController'
+Require stack:
+- C:\Users\pooja\codex-training-labs\Codex-modules\modules\module-03-debugging-with-codex\labs\stack-trace-playground\backend\src\server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at Module._load (node:internal/modules/cjs/loader:1226:27)
+    at Module.require (node:internal/modules/cjs/loader:1503:19)
+    at require (node:internal/modules/helpers:152:18)
+    at Object.<anonymous> (src/server.js:6:24)
+
+Trace 5: Port already in use
+
+Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (src/server.js:38:5)

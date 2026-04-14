@@ -7,6 +7,9 @@ This lab pairs a lightweight React dashboard with an Express diagnostics service
 - `frontend/` — Vite-powered React UI with a textarea for pasting stack traces, sample traces to seed the activity, and a card that renders the returned diagnostic plus a patch preview.
 - `backend/` — Express API that accepts `POST /stack-trace` payloads and returns a structured response (bad line, root cause, fix suggestion, patch preview). The service can be replaced with Codex once you are comfortable with the prompt flows.
 
+- `stacktrace.txt` - Participant practice traces for manual analysis.
+- `codex-stacktrace-answer-key.md` - Facilitator answer key with Codex-style root causes and fixes.
+
 ## Getting started
 
 1. `cd frontend && npm install && npm run dev` to start the React UI on `http://localhost:5173/`.

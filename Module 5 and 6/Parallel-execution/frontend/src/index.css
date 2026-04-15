@@ -1,0 +1,299 @@
+:root {
+  color: #1e2320;
+  background: #f7f8f4;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+select,
+input {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 8px;
+  background: #0f8b6f;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0.85rem 1rem;
+}
+
+button:disabled {
+  background: #8ca49b;
+  cursor: wait;
+}
+
+.app-shell {
+  display: grid;
+  gap: 1.25rem;
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 2rem;
+}
+
+.intro {
+  border-bottom: 3px solid #1e2320;
+  padding-bottom: 1.25rem;
+}
+
+.intro h1,
+.scenario-summary h2,
+.timeline h2,
+.study-prompts h2 {
+  letter-spacing: 0;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.intro h1 {
+  font-size: clamp(2rem, 6vw, 4.25rem);
+  max-width: 820px;
+}
+
+.intro p:not(.eyebrow) {
+  font-size: 1.08rem;
+  max-width: 780px;
+}
+
+.eyebrow,
+.label {
+  color: #69736e;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  margin: 0 0 0.35rem;
+  text-transform: uppercase;
+}
+
+.control-surface,
+.scenario-summary,
+.timeline,
+.study-prompts {
+  background: #ffffff;
+  border: 1px solid #d7ddd6;
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.control-surface {
+  align-items: end;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(220px, 1fr) minmax(220px, auto) minmax(120px, auto);
+}
+
+.field,
+fieldset {
+  display: grid;
+  gap: 0.45rem;
+}
+
+label,
+legend {
+  font-weight: 800;
+}
+
+select {
+  border: 1px solid #aeb8b1;
+  border-radius: 8px;
+  min-height: 48px;
+  padding: 0.65rem;
+}
+
+fieldset {
+  border: 1px solid #aeb8b1;
+  border-radius: 8px;
+  grid-template-columns: 1fr 1fr;
+  margin: 0;
+  min-height: 76px;
+  padding: 0.65rem 0.75rem;
+}
+
+fieldset legend {
+  padding: 0 0.35rem;
+}
+
+fieldset label {
+  align-items: center;
+  display: flex;
+  gap: 0.35rem;
+}
+
+.scenario-summary {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.scenario-summary p {
+  margin: 0;
+  max-width: 760px;
+}
+
+.metrics,
+.comparison {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.metrics span,
+.comparison div {
+  background: #edf6ef;
+  border-left: 4px solid #3aa76d;
+  border-radius: 8px;
+  padding: 0.8rem;
+}
+
+.comparison div:nth-child(2) {
+  background: #eef7f6;
+  border-color: #1d9a91;
+}
+
+.comparison div:nth-child(3) {
+  background: #fff8df;
+  border-color: #c49a12;
+}
+
+.comparison strong {
+  display: block;
+  font-size: 1.35rem;
+  line-height: 1.1;
+}
+
+.status {
+  border-radius: 8px;
+  font-weight: 800;
+  margin: 0;
+  padding: 0.9rem 1rem;
+}
+
+.status.running {
+  background: #fff8df;
+  color: #6c5200;
+}
+
+.status.success {
+  background: #e6f6ec;
+  color: #17613a;
+}
+
+.status.error {
+  background: #ffe9e6;
+  color: #9f2b18;
+}
+
+.timeline {
+  display: grid;
+  gap: 1rem;
+}
+
+.timeline-heading {
+  align-items: end;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.timeline-heading strong {
+  color: #0f8b6f;
+  font-size: 2rem;
+}
+
+.timeline-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.timeline-row {
+  align-items: center;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(220px, 1.4fr) 72px;
+}
+
+.row-copy h3,
+.row-copy p,
+.row-copy span,
+.duration {
+  margin: 0;
+}
+
+.row-copy h3 {
+  font-size: 1rem;
+}
+
+.row-copy p,
+.row-copy span {
+  color: #56615c;
+  display: block;
+  font-size: 0.9rem;
+}
+
+.bar-track {
+  background: #e5eae6;
+  border-radius: 8px;
+  height: 26px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar {
+  background: linear-gradient(90deg, #0f8b6f, #e36f45);
+  border-radius: 8px;
+  height: 100%;
+  min-width: 16px;
+  position: absolute;
+  top: 0;
+}
+
+.duration {
+  font-weight: 800;
+  text-align: right;
+}
+
+.empty-state p {
+  margin: 0;
+}
+
+.study-prompts ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.study-prompts li + li {
+  margin-top: 0.45rem;
+}
+
+@media (max-width: 820px) {
+  .app-shell {
+    padding: 1rem;
+  }
+
+  .control-surface,
+  .metrics,
+  .comparison,
+  .timeline-row {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .duration {
+    text-align: left;
+  }
+}
